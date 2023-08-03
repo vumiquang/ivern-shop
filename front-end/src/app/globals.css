@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  header .nav-item-link {
+    @apply block w-full text-center py-2 font-medium hover:bg-red-400 hover:text-white transition-all lg:hover:bg-[unset];
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  header .nav {
+    @apply transition-all fixed top-0 w-[300px] max-w-[300px] h-screen overflow-y-auto z-50 bg-darker-yellow pt-10  lg:flex lg:justify-center lg:grow-[1] lg:w-[unset] lg:max-w-full lg:relative lg:h-[unset] lg:bg-transparent lg:pt-0 lg:!left-[unset];
+  }
+  footer .footer-menu li:not(:first-child) {
+    @apply mt-2.5 lg:mt-[46px];
+  }
+  footer .footer-menu a {
+    @apply hover:text-red-400;
+  }
+  .border-bottom-custom {
+    @apply border-b-2 border-slate-900;
+  }
+  .hero-height {
+    height: calc(100vh - 100px);
+    max-height: 900px;
+    min-height: 500px;
+    overflow: hidden;
+  }
 }
