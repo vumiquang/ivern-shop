@@ -22,6 +22,7 @@ const Header = () => {
           onClick={() => setShowMenuMobile(true)}
         />
       </div>
+
       <div className="grow flex justify-center lg:justify-start lg:w-[260px] lg:grow-0 lg:shrink-0">
         <Link href="\">
           <Image
@@ -35,6 +36,7 @@ const Header = () => {
           />
         </Link>
       </div>
+
       <nav className={`nav ${showMenuMobile ? "left-0" : "-left-full"}`}>
         <IoClose
           className="w-7 h-7 absolute top-2 right-2 cursor-pointer lg:hidden"
@@ -63,10 +65,14 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
       <div
-        className={`fixed top-0 left-0 w-screen h-screen z-40 bg-[rgba(0,0,0,0.4)] lg:hidden ${showMenuMobile ? '': 'hidden'}`}
+        className={`fixed top-0 left-0 w-screen h-screen z-40 bg-[rgba(0,0,0,0.4)] lg:hidden ${
+          showMenuMobile ? "" : "hidden"
+        }`}
         onClick={() => setShowMenuMobile(false)}
       ></div>
+
       <div className="lg:grow-0 lg:shrink-0 flex gap-x-[20px] xl:gap-x-[45px] justify-end">
         <MdOutlinePerson className="w-[28px] h-[28px] hidden lg:block" />
         <PiMagnifyingGlassBold className="w-[28px] h-[28px] hidden lg:block" />
